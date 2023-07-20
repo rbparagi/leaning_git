@@ -1,0 +1,25 @@
+FROM ubuntu
+
+CMD sleep 5
+
+# docker build -t ubuntu-sleeper
+
+FROM ubuntu
+
+ENTRYPOINT [ "sleep" ]
+
+    # docker run ubuntu-sleeper 10
+
+FROM ubuntu
+
+ENTRYPOINT [ "sleep" ]
+
+CMD [ "5" ]
+
+# docker run  ubuntu-sleeper 10
+    # ENTRY-POINT will append in the runtime
+    # CMD wil replace the during the run time
+
+# IF you want to run ENTRYPOINT during time, user entrypoint env
+
+    # docker run --entrypoint sleep2.0 ubuntu-sleeper

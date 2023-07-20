@@ -1,0 +1,84 @@
+docker container create httpd
+
+docker container ls --> list the running containers
+
+docker container ls -a --> show all running and stopped container
+
+docker container ls -l --> shows last created container
+
+docker container ls -q --> displays short container id
+
+docker container ls -aq --> displays short container id for running and stopped
+
+docker container start container_id
+
+docker container run http --> this create and start container
+
+
+
+====== Run container with options =====
+
+docker container run -it ubuntu
+
+docker container run -it -d --name=webapp ubuntu
+
+docker container rename webapp custom-webapp
+
+========== Interacting with docker container ============
+
+docker container run -it ubuntu
+
+Executing command in running container
+    docker container exec container_id hostname
+
+    docker container exec -it container_id /bin/bash
+
+Instpecting container_id
+    docker container insect webapp
+
+Container stats
+    docker container stats
+
+Container Top
+    docker container top webapp
+
+Container logs
+    docker container logs logtest
+    docker container logs -f logtest
+
+
+Stopping and removing containers
+    docker container run --name web httpd
+    docker container pause web
+    docker container resume web
+    docker container stop web
+    docker container kill --signal=9 web
+
+    docker container rm web
+
+Remove all the containers
+    docker container ls -a --> it will give all the containers
+
+    docker containers ls -a --> it will list all the running containers id
+
+    docker container stop $(docker container ls -q)
+    docker container rm $(docker container ls -aq)
+
+    docker container prune  ===> This deletes all stopped containers and reclaim space
+
+Set hostname to the container
+    docker container run -it --name=webapp --hostname=webapp ubuntu
+
+Restart Policies
+    
+
+
+
+
+
+
+
+
+
+
+
