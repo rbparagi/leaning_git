@@ -70,6 +70,20 @@ Set hostname to the container
     docker container run -it --name=webapp --hostname=webapp ubuntu
 
 Restart Policies
+    docker container run --restart=always ubuntu
+
+Copying files - in container
+    docker container cp /tmp/web.conf webapp:/etc/web.conf
+
+    docker container cp webapp:/root/dockerhost /tmp/
+
+Publishing PORT
+    docker run -p host_port:container_port kodekloud/simple-webapp
+    docker run -p 80:5000 kodekloud/simple-webapp
+
+    docker run -p 8001:5000 kodekloud/simple-webapp
+    docker run -p 3306:3306 mysql
+    docker run -p 8306:3306 mysql
     
 
 
